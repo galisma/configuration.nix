@@ -109,6 +109,7 @@
     ncmpcpp
     mpc
     blanket
+    pciutils
 
     #haskell
     ghc
@@ -163,6 +164,10 @@
   '';
   };
 
+  systemd.services.mpd.environment = {
+   XDG_RUNTIME_DIR = "/run/user/1000"; # User-id 1000 must match above user. MPD will look inside this directory for the PipeWire socket.
+  };
+
   # Ssh
   services.openssh = {
   enable = true;
@@ -174,9 +179,5 @@
     X11Forwarding = false;
     PermitRootLogin = "prohibit-password"; # "yes", "without-password", "prohibit-password", "forced-commands-only", "no"
   };
-  };
-
-  systemd.services.mpd.environment = {
-   XDG_RUNTIME_DIR = "/run/user/1000"; # User-id 1000 must match above user. MPD will look inside this directory for the PipeWire socket.
   };
 }
