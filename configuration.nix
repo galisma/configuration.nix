@@ -77,7 +77,10 @@
     kdePackages.xdg-desktop-portal-kde
     kdePackages.sddm-kcm
     kdePackages.khelpcenter
+    kdePackages.filelight
     kdePackages.qtmultimedia
+    kdePackages.konversation
+    # kdePackages.neochat 	flag as insecure
     qt6.qtwayland
 
     # ============ Lenguajes de programacion ============
@@ -108,8 +111,12 @@
     vesktop
     thunderbird
 
-    # ============ Multimedia ============
+    # ============ Graficos =============
+    krita
     blender
+    gimp3
+
+    # ============ Multimedia ============
     cava
     mpd
     ncmpcpp
@@ -117,6 +124,8 @@
     blanket
 
     # ============ Utilidades del sistema ============
+    nut
+    usbutils
     fastfetch
     wl-clipboard
     alsa-utils
