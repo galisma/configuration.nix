@@ -62,65 +62,89 @@
   # Programas
   programs.firefox.enable = true;
   nixpkgs.config.allowUnfree = true;
-  
+    
   # Paquetes del sistema
   environment.systemPackages = with pkgs; [
+    # ============ Editores e IDEs ============
     vim
-    fastfetch
-    git
-    vscode
+    helix
     neovim
+    vscode
+    vscodium
+
+    # ============ Entorno KDE ============
     kdePackages.kdenlive
-    blender
-    wl-clipboard
-    qt6.qtwayland
     kdePackages.xdg-desktop-portal-kde
     kdePackages.sddm-kcm
-    chromium
-    vesktop
     kdePackages.khelpcenter
     kdePackages.qtmultimedia
+    qt6.qtwayland
+
+    # ============ Lenguajes de programacion ============
     rustc
     php
     python314
     nodejs_24
-    libgcc
-    sqlitebrowser
-    tmux
-    godot
-    helix
-    thunderbird
-    alsa-utils
-    cava
-    dig
-    gping
-    btop
-    tealdeer
-    taskwarrior3
-    zoxide
-    vscodium
-    xdg-ninja
-    libreoffice-qt6-fresh
-    gnumake
-
-    virtualbox
     lua
-    bat
-    mpd
-    ncmpcpp
-    mpc
-    blanket
-    pciutils
+    sbcl
 
-    #haskell
+    # ============ Haskell ============
     ghc
     haskellPackages.haskell-language-server
     haskellPackages.cabal-install
     haskellPackages.ghcid
     haskellPackages.hlint
     haskellPackages.ormolu
-  ];
 
+    # ============ Herramientas de desarrollo ============
+    git
+    gnumake
+    sqlitebrowser
+    godot
+    libgcc
+
+    # ============ Navegadores y comunicaciones ============
+    chromium
+    vesktop
+    thunderbird
+
+    # ============ Multimedia ============
+    blender
+    cava
+    mpd
+    ncmpcpp
+    mpc
+    blanket
+
+    # ============ Utilidades del sistema ============
+    fastfetch
+    wl-clipboard
+    alsa-utils
+    dig
+    btop
+    pciutils
+    gping
+
+    # ============ Utilidades de terminal ============
+    tmux
+    tealdeer
+    taskwarrior3
+    zoxide
+    bat
+    rlwrap
+
+    # ============ Productividad ============
+    libreoffice-qt6-fresh
+    xdg-ninja
+
+    # ============ Virtualizacion ============
+    virtualbox
+
+    # ============ Ajedrez ============
+    en-croissant
+    stockfish
+  ];
+  
   # Nerd-fonts
   fonts.packages = with pkgs; [
     nerd-fonts.jetbrains-mono
