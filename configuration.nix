@@ -101,6 +101,7 @@
     vscodium
     xdg-ninja
     libreoffice-qt6-fresh
+    gnumake
 
     virtualbox
     lua
