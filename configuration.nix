@@ -80,6 +80,9 @@
     kdePackages.filelight
     kdePackages.qtmultimedia
     kdePackages.konversation
+    kdePackages.kcolorchooser
+    kdePackages.kcalc
+    kdePackages.alligator
     # kdePackages.neochat 	flag as insecure
     qt6.qtwayland
 
@@ -90,6 +93,7 @@
     nodejs_24
     lua
     sbcl
+    gcc
 
     # ============ Haskell ============
     ghc
@@ -117,6 +121,8 @@
     gimp3
 
     # ============ Multimedia ============
+    vlc
+    mpv
     cava
     mpd
     ncmpcpp
@@ -137,11 +143,14 @@
     # ============ Utilidades de terminal ============
     tmux
     tealdeer
-    taskwarrior3
     zoxide
     bat
     rlwrap
 
+    # ============ Juegos ================
+    superTuxKart
+    nmap
+	
     # ============ Productividad ============
     libreoffice-qt6-fresh
     xdg-ninja
@@ -152,6 +161,9 @@
     # ============ Ajedrez ============
     en-croissant
     stockfish
+
+    # ============ BDDD ==============
+    sqlite
   ];
   
   # Nerd-fonts
