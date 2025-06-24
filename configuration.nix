@@ -82,7 +82,9 @@
     kdePackages.konversation
     kdePackages.kcolorchooser
     kdePackages.kcalc
+    kdePackages.plasma-welcome
     kdePackages.alligator
+    kdePackages.discover
     # kdePackages.neochat 	flag as insecure
     qt6.qtwayland
 
@@ -120,6 +122,10 @@
     blender
     gimp3
 
+    # ============ Audio ==============
+    audacity
+    lmms
+
     # ============ Multimedia ============
     vlc
     mpv
@@ -128,6 +134,10 @@
     ncmpcpp
     mpc
     blanket
+
+    media-downloader
+    ffmpeg
+    yt-dlp
 
     # ============ Utilidades del sistema ============
     nut
