@@ -119,12 +119,14 @@
 
     # ============ Graficos =============
     krita
+    inkscape
     blender
     gimp3
 
     # ============ Audio ==============
     audacity
     lmms
+    musescore
 
     # ============ Multimedia ============
     vlc
@@ -134,6 +136,7 @@
     ncmpcpp
     mpc
     blanket
+    imagemagick
 
     media-downloader
     ffmpeg
@@ -156,10 +159,16 @@
     zoxide
     bat
     rlwrap
+    lsof
+    nmap
 
     # ============ Juegos ================
     superTuxKart
-    nmap
+    shattered-pixel-dungeon
+    
+    # ============ Juegos de terminal ===============
+    brogue
+    nethack
 	
     # ============ Productividad ============
     libreoffice-qt6-fresh
@@ -174,6 +183,11 @@
 
     # ============ BDDD ==============
     sqlite
+
+    # ============ libs =============
+    glfw
+    libGLU
+    cmake
   ];
   
   # Nerd-fonts
@@ -216,6 +230,13 @@
     audio_output {
       type "pipewire"
       name "My PipeWire Output"
+    }
+
+    audio_output {
+      type                    "fifo"
+      name                    "my_fifo"
+      path                    "/tmp/mpd.fifo"
+      format                  "44100:16:2"
     }
   '';
   };
