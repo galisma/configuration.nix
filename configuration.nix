@@ -61,15 +61,27 @@
 
   # Programas
   programs.firefox.enable = true;
+  programs.kdeconnect.enable = true;
   nixpkgs.config.allowUnfree = true;
-    
+
+  # NCMPCPP override
+  nixpkgs.overlays = [
+    (final: prev: {
+      ncmpcpp = prev.ncmpcpp.override {
+        visualizerSupport = true;
+        clockSupport = true;
+      };
+    })
+  ];
+
+
   # Paquetes del sistema
   environment.systemPackages = with pkgs; [
     # ============ Editores e IDEs ============
     vim
     helix
     neovim
-    vscode
+    vscode-fhs
     vscodium
 
     # ============ Entorno KDE ============
@@ -85,6 +97,7 @@
     kdePackages.plasma-welcome
     kdePackages.alligator
     kdePackages.discover
+    kdePackages.kdeconnect-kde
     # kdePackages.neochat 	flag as insecure
     qt6.qtwayland
 
@@ -96,6 +109,7 @@
     lua
     sbcl
     gcc
+    jdk
 
     # ============ Haskell ============
     ghc
@@ -127,17 +141,25 @@
     audacity
     lmms
     musescore
+    furnace
 
     # ============ Multimedia ============
     vlc
     mpv
     cava
     mpd
-    ncmpcpp
+    ncmpcpp 
+
+    #(ncmpcpp.override {
+    #  visualizerSupport = true;
+    #  clockSupport = true;
+    #})
+
     mpc
     blanket
     imagemagick
 
+    obs-studio
     media-downloader
     ffmpeg
     yt-dlp
@@ -152,6 +174,8 @@
     btop
     pciutils
     gping
+    libnotify
+    kitty
 
     # ============ Utilidades de terminal ============
     tmux
@@ -161,10 +185,15 @@
     rlwrap
     lsof
     nmap
+    cmatrix
 
     # ============ Juegos ================
     superTuxKart
     shattered-pixel-dungeon
+    #veloren
+    steam
+    prismlauncher
+    zeroad
     
     # ============ Juegos de terminal ===============
     brogue
@@ -173,6 +202,7 @@
     # ============ Productividad ============
     libreoffice-qt6-fresh
     xdg-ninja
+    plantuml
 
     # ============ Virtualizacion ============
     virtualbox
@@ -188,6 +218,13 @@
     glfw
     libGLU
     cmake
+
+    #python
+    pylint
+    rembg
+
+    # ============ Internet ============
+    tor-browser
   ];
   
   # Nerd-fonts
@@ -239,6 +276,7 @@
       format                  "44100:16:2"
     }
   '';
+    network.listenAddress = "any";
   };
 
   systemd.services.mpd.environment = {
