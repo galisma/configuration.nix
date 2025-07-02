@@ -125,6 +125,7 @@
     sqlitebrowser
     godot
     libgcc
+    wireshark
 
     # ============ Navegadores y comunicaciones ============
     chromium
@@ -186,14 +187,18 @@
     lsof
     nmap
     cmatrix
+    inetutils
 
     # ============ Juegos ================
     superTuxKart
     shattered-pixel-dungeon
     #veloren
-    steam
+    #steam
     prismlauncher
     zeroad
+    #redeclipse
+    luanti
+    heroic
     
     # ============ Juegos de terminal ===============
     brogue
@@ -226,6 +231,14 @@
     # ============ Internet ============
     tor-browser
   ];
+
+  # Steam
+  programs.steam = {
+  enable = true;
+  remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
+  dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
+  localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
+  };
   
   # Nerd-fonts
   fonts.packages = with pkgs; [
